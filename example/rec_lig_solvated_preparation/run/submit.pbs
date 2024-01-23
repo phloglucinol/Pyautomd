@@ -1,0 +1,35 @@
+#!/bin/bash
+#cd $PBS_O_WORKDIR
+
+#setenv AMBERHOME /u1/local/amber12
+#setenv CUDA_HOME /usr/local/cuda
+#setenv PATH /usr/local/cuda/bin:{$PATH}
+#set mpich_run = "/u1/local/mpich2-1.4-intel/bin/mpirun"
+#set sander="/u1/local/amber12/exe/sander.MPI"
+
+pmemd.cuda_SPFP -O -i ./ins/min1.in         -o min1.out       -p protein.prmtop  -c protein.prmcrd        -r min1.rst                            -ref protein.prmcrd    
+                                                                                                                                                               
+pmemd.cuda_SPFP -O -i ./ins/min2.in         -o min2.out       -p protein.prmtop  -c min1.rst           -r min2.rst                            -ref min1.rst       
+                                                                                                                                                               
+pmemd.cuda_SPFP -O -i ./ins/min3.in         -o min3.out       -p protein.prmtop  -c min2.rst           -r min3.rst                            -ref min2.rst       
+                                                                                                                                                               
+pmemd.cuda_SPFP -O -i ./ins/min4.in         -o min4.out       -p protein.prmtop  -c min3.rst           -r min4.rst                            -ref min3.rst         
+                
+pmemd.cuda_SPFP -O -i ./ins/heat.in         -o heat.out       -p protein.prmtop  -c min4.rst           -r heat.rst     -x protein-heat.mdcrd     -ref min4.rst      
+gzip -9 protein-heat.mdcrd &                                                                                                                                                             
+pmemd.cuda_SPFP -O -i ./ins/density.in      -o density.out    -p protein.prmtop  -c heat.rst           -r density.rst  -x protein-density.mdcrd  -ref heat.rst      
+gzip -9 protein-density.mdcrd &                                                                                                                                                              
+pmemd.cuda_SPFP -O -i ./ins/equil.in        -o equil.out      -p protein.prmtop  -c density.rst        -r equil.rst    -x protein-equil.mdcrd    -ref density.rst   
+gzip -9 protein-equil.mdcrd&
+
+
+
+pmemd.cuda_SPFP -O -i ./ins/prod.in -o prod1.out -p protein.prmtop -c equil.rst -r prod1.rst -x protein-prod1.mdcrd
+gzip -9 protein-prod1.mdcrd&
+pmemd.cuda_SPFP -O -i ./ins/prod.in -o prod2.out -p protein.prmtop -c prod1.rst -r prod2.rst -x protein-prod2.mdcrd
+gzip -9 protein-prod2.mdcrd&
+pmemd.cuda_SPFP -O -i ./ins/prod.in -o prod3.out -p protein.prmtop -c prod2.rst -r prod3.rst -x protein-prod3.mdcrd
+gzip -9 protein-prod3.mdcrd&
+pmemd.cuda_SPFP -O -i ./ins/prod.in -o prod4.out -p protein.prmtop -c prod3.rst -r prod4.rst -x protein-prod4.mdcrd
+gzip -9 protein-prod4.mdcrd&
+wait

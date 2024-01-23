@@ -1,0 +1,39 @@
+[ForceField]
+protein_ff = leaprc.protein.ff14SB
+small_molecule_ff = leaprc.gaff2
+lipid_ff = leaprc.lipid17
+water_ff = leaprc.water.tip3p
+externel_amber_parms = "zn-mg.frcmod TPO.frcmod SO4.frcmod"
+externel_amber_prep = "zn.prepi oh.prepi TPO.prepi SO4.prepi"
+[Externel_program_path]
+automd_home = /nfs/export3_25T/pyautomd/pyautomd 
+amber = /nfs/rdliu_gpu2/local_soft/amber20 
+gaussian = g03
+amber_md = pmemd.cuda_SPFP
+gaussian_scr_path = /tmp/zli/scr
+[MD_input_parameters]
+restraint_lig = '' # ligand ambmask used for restraint this line can be empty
+restraint_rec = '' # receptor ambmask used for restraint this line can be empty
+restraint_add = '' # additional ambmask used for restraint this line can be empty
+cutoff = 10.0
+final_temp = 300.0
+heat_nstlim = 25000
+density_nstlim = 25000
+equil_nstlim = 50000
+prod_nstlim = 1000000
+prod_steps = 4
+[Preparation_option]
+ligand_pdb = mol.pdb
+lig_residue_name = MOL
+ligand_charge = 0
+receptor_pdb = protein.pdb
+ifonly_small_molecule_prepare = False
+ifonly_protein_prepare = False
+ifcomplex_prepare = True
+charge_model = bcc #or RESP, which need gaussian
+boxtype = 'solvateoct' # [solvatebox|solvateoct]
+boxsize = 10.0
+sbond_file = None
+tleap_file = None
+ifoptimization_ligand = False
+iffull_auto = True

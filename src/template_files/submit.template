@@ -1,0 +1,9 @@
+#!/bin/bash
+#cd $PBS_O_WORKDIR
+
+#setenv AMBERHOME /u1/local/amber12
+#setenv CUDA_HOME /usr/local/cuda
+#setenv PATH /usr/local/cuda/bin:{$PATH}
+#set mpich_run = "/u1/local/mpich2-1.4-intel/bin/mpirun"
+#set sander="/u1/local/amber12/exe/sander.MPI"
+

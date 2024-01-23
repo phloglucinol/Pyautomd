@@ -1,0 +1,45 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff2
+source leaprc.lipid17
+source leaprc.water.tip3p
+loadamberparams MOL.frcmod
+loadamberprep MOL.prepi
+loadamberparams zn-mg.frcmod
+loadamberparams TPO.frcmod
+loadamberparams SO4.frcmod
+loadamberprep zn.prepi
+loadamberprep oh.prepi
+loadamberprep TPO.prepi
+loadamberprep SO4.prepi
+
+model = loadpdb protein_MOL.pdb                                   
+
+savepdb model  tleap-protein-ini.pdb
+
+charge model                                                  
+addions model Cl- 0.0   
+addions model Na+ 0.0                                      
+solvateoct model TIP3PBOX 10.0                              
+savepdb model  tleap-protein-wat.pdb                          
+saveamberparm model protein.prmtop protein.prmcrd             
+
+
+rec-lig = loadpdb rec-lig.pdb                                 
+saveamberparm rec-lig rec-lig.prmtop rec-lig.prmcrd           
+
+rec = loadpdb rec.pdb                                         
+saveamberparm rec rec.prmtop rec.prmcrd                       
+
+lig_wat = loadpdb lig.pdb
+charge lig_wat
+addions lig_wat Cl- 0.0
+addions lig_wat Na+ 0.0
+solvateoct lig_wat TIP3PBOX 10.0 
+savepdb lig_wat tleap-lig-wat.pdb
+saveamberparm lig_wat lig-wat.prmtop lig-wat.prmcrd
+
+lig = loadpdb lig.pdb
+saveamberparm lig lig.prmtop lig.prmcrd
+
+quit
+

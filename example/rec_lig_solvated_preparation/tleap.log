@@ -1,0 +1,339 @@
+-I: Adding /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/prep to search path.
+-I: Adding /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/lib to search path.
+-I: Adding /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm to search path.
+-I: Adding /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd to search path.
+-f: Source tleap.txt.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./tleap.txt
+----- Source: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.protein.ff14SB
+----- Source of /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.protein.ff14SB done
+Log file: ./leap.log
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/lib/amino12.lib
+Loading library: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/lib/aminoct12.lib
+Loading library: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/lib/aminont12.lib
+----- Source: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.gaff2
+----- Source of /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.gaff2 done
+Log file: ./leap.log
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.11, May 2016)
+----- Source: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.lipid17
+----- Source of /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.lipid17 done
+Log file: ./leap.log
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/lipid17.dat
+Reading title:
+AMBER Lipid17 v1.1 Force Field, A. Skjevik, C. Dickson, B. Madej, I.R. Gould, R.C. Walker*
+Loading library: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/lib/lipid17.lib
+----- Source: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/cmd/leaprc.water.tip3p done
+Loading library: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/lib/atomic_ions.lib
+Loading library: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/lib/solvents.lib
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading parameters: /nfs/rdliu_gpu2/local_soft/amber20/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+Loading parameters: ./MOL.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading Prep file: ./MOL.prepi
+Loading parameters: ./zn-mg.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+remark goes here
+Loading parameters: ./TPO.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading parameters: ./SO4.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading Prep file: ./zn.prepi
+Loading Prep file: ./oh.prepi
+Loading Prep file: ./TPO.prepi
+Loading Prep file: ./SO4.prepi
+Loading PDB file: ./protein_MOL.pdb
+  Added missing heavy atom: .R<WAT 170>.A<O 1>
+  total atoms in file: 2244
+  Leap added 14 missing atoms according to residue templates:
+       1 Heavy
+       13 H / lone pairs
+Writing pdb file: tleap-protein-ini.pdb
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NSER -> SER
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CGLU -> GLU
+Total unperturbed charge:   0.998000
+Total perturbed charge:     0.998000
+1 Cl- ion required to neutralize.
+Adding 1 counter ions to "model" using 1A grid
+Grid extends from solute vdw + 2.51  to  8.51
+Resolution:      1.00 Angstrom.
+Solvent present: replacing closest with ion
+	 when steric overlaps occur
+Calculating grid charges
+(Replacing solvent molecule)
+Placed Cl- in model at (20.26, 39.66, 4.65).
+
+Done adding ions.
+ 0.002000 0 1 0
+0 Na+ ion required to neutralize.
+Adding 0 counter ions to "model" using 1A grid
+Scaling up box by a factor of 1.199538 to meet diagonal cut criterion
+  Solute vdw bounding box:              31.258 53.710 46.445
+  Total bounding box for atom centers:  77.701 77.701 77.701
+      (box expansion for 'iso' is  55.1%)
+  Solvent unit box:                     18.774 18.774 18.774
+  Volume: 243727.675 A^3 (oct)
+  Total mass 129433.964 amu,  Density 0.882 g/cc
+  Added 6295 residues.
+Writing pdb file: tleap-protein-wat.pdb
+   printing CRYST1 record to PDB file with box info
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NSER -> SER
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CGLU -> GLU
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 169>:  C6   C2   C1   C11 
+ <MOL 169>:  C1   C3   C2   H1  
+ <MOL 169>:  C2   C4   C3   Cl1 
+ <MOL 169>:  C5   C3   C4   H2  
+ <MOL 169>:  C6   C4   C5   H3  
+ <MOL 169>:  C5   C1   C6   N1  
+ <MOL 169>:  C6   C7   N1   C9  
+ <MOL 169>:  C8   N1   C7   N2  
+ <MOL 169>:  C10  N1   C9   N3  
+ <MOL 169>:  C12  C1   C11  N4  
+ <MOL 169>:  C13  C17  C12  C11 
+ <MOL 169>:  C12  C14  C13  H9  
+ <MOL 169>:  C13  C15  C14  H10 
+ <MOL 169>:  C14  C16  C15  H11 
+ <MOL 169>:  C15  C17  C16  H12 
+ <MOL 169>:  C12  C16  C17  H13 
+ total 440 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CGLU	1
+	NSER	1
+	WAT	6328
+  )
+ (no restraints)
+Loading PDB file: ./rec-lig.pdb
+  total atoms in file: 2143
+  Leap added 13 missing atoms according to residue templates:
+       13 H / lone pairs
+Checking Unit.
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Warning!
+The unperturbed charge of the unit (0.998000) is not zero.
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 169>:  C6   C2   C1   C11 
+ <MOL 169>:  C1   C3   C2   H1  
+ <MOL 169>:  C2   C4   C3   Cl1 
+ <MOL 169>:  C5   C3   C4   H2  
+ <MOL 169>:  C6   C4   C5   H3  
+ <MOL 169>:  C5   C1   C6   N1  
+ <MOL 169>:  C6   C7   N1   C9  
+ <MOL 169>:  C8   N1   C7   N2  
+ <MOL 169>:  C10  N1   C9   N3  
+ <MOL 169>:  C12  C1   C11  N4  
+ <MOL 169>:  C13  C17  C12  C11 
+ <MOL 169>:  C12  C14  C13  H9  
+ <MOL 169>:  C13  C15  C14  H10 
+ <MOL 169>:  C14  C16  C15  H11 
+ <MOL 169>:  C15  C17  C16  H12 
+ <MOL 169>:  C12  C16  C17  H13 
+ total 440 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CGLU	1
+	NSER	1
+  )
+ (no restraints)
+Loading PDB file: ./rec.pdb
+  total atoms in file: 2108
+  Leap added 13 missing atoms according to residue templates:
+       13 H / lone pairs
+Checking Unit.
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Warning!
+The unperturbed charge of the unit (1.000000) is not zero.
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 424 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CGLU	1
+	NSER	1
+  )
+ (no restraints)
+Loading PDB file: ./lig.pdb
+  total atoms in file: 35
+Total unperturbed charge:  -0.002000
+Total perturbed charge:    -0.002000
+
+/nfs/rdliu_gpu2/local_soft/amber20/bin/teLeap: Warning!
+addIons: 1st Ion & target unit have charges of the same sign:
+     unit charge = -0.002; ion1 charge = -1;
+     can't neutralize.
+ 0.002000 0 1 0
+0 Na+ ion required to neutralize.
+Adding 0 counter ions to "lig_wat" using 1A grid
+Scaling up box by a factor of 1.259747 to meet diagonal cut criterion
+  Solute vdw bounding box:              11.314 7.916 12.793
+  Total bounding box for atom centers:  37.988 37.988 37.988
+      (box expansion for 'iso' is  19.4%)
+  Solvent unit box:                     18.774 18.774 18.774
+  Volume: 29631.699 A^3 (oct)
+  Total mass 14541.404 amu,  Density 0.815 g/cc
+  Added 790 residues.
+Writing pdb file: tleap-lig-wat.pdb
+   printing CRYST1 record to PDB file with box info
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 1>:  C6   C2   C1   C11 
+ <MOL 1>:  C1   C3   C2   H1  
+ <MOL 1>:  C2   C4   C3   Cl1 
+ <MOL 1>:  C5   C3   C4   H2  
+ <MOL 1>:  C6   C4   C5   H3  
+ <MOL 1>:  C5   C1   C6   N1  
+ <MOL 1>:  C6   C7   N1   C9  
+ <MOL 1>:  C8   N1   C7   N2  
+ <MOL 1>:  C10  N1   C9   N3  
+ <MOL 1>:  C12  C1   C11  N4  
+ <MOL 1>:  C13  C17  C12  C11 
+ <MOL 1>:  C12  C14  C13  H9  
+ <MOL 1>:  C13  C15  C14  H10 
+ <MOL 1>:  C14  C16  C15  H11 
+ <MOL 1>:  C15  C17  C16  H12 
+ <MOL 1>:  C12  C16  C17  H13 
+ total 16 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	WAT	790
+  )
+ (no restraints)
+Loading PDB file: ./lig.pdb
+  total atoms in file: 35
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 1>:  C6   C2   C1   C11 
+ <MOL 1>:  C1   C3   C2   H1  
+ <MOL 1>:  C2   C4   C3   Cl1 
+ <MOL 1>:  C5   C3   C4   H2  
+ <MOL 1>:  C6   C4   C5   H3  
+ <MOL 1>:  C5   C1   C6   N1  
+ <MOL 1>:  C6   C7   N1   C9  
+ <MOL 1>:  C8   N1   C7   N2  
+ <MOL 1>:  C10  N1   C9   N3  
+ <MOL 1>:  C12  C1   C11  N4  
+ <MOL 1>:  C13  C17  C12  C11 
+ <MOL 1>:  C12  C14  C13  H9  
+ <MOL 1>:  C13  C15  C14  H10 
+ <MOL 1>:  C14  C16  C15  H11 
+ <MOL 1>:  C15  C17  C16  H12 
+ <MOL 1>:  C12  C16  C17  H13 
+ total 16 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 7; Notes = 2.

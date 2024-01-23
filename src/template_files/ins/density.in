@@ -1,0 +1,14 @@
+density PDE9 (3JSW)
+ &cntrl
+  imin=0,irest=1,ntx=5,
+  nstlim=_DENSITY_NSTLIM_,dt=0.002,
+  ntc=2,ntf=2,
+  cut=_CUTOFF_, ntb=2, ntp=1, taup=1.0,pres0 = 1.0,
+  ntpr=1000, ntwx=1000,
+  ntt=3, gamma_ln=2.0,
+  temp0=_FINAL_TEMP_,
+  ntr=1,restraintmask=':_RESTRAINT_REC_,_RESTRAINT_LIG_,_RESTRAINT_ADD_&!@H=',
+  restraint_wt=10.0,
+  ig=-1,
+/
+END

@@ -1,0 +1,12 @@
+PDE4 (1xoq) : 2nd minimisation solvent + ions
+ &cntrl
+  imin   = 1,
+  maxcyc = 5000,
+  ncyc   = 2500,
+  ntb    = 1,
+  ntr    = 1,
+  cut    = 10.0,
+  restraintmask=':1-127@CA,C,N | :128 ',
+  restraint_wt=50.0,
+/
+

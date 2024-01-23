@@ -1,0 +1,32 @@
+
+model = loadpdb _rec_name_u__MOL.pdb                                   
+_SBOND_LINE_
+savepdb model  tleap-_rec_name_l_-ini.pdb
+
+charge model                                                  
+addions model Cl- 0.0   
+addions model Na+ 0.0                                      
+_BOXTYPE_ model TIP3PBOX _BOXSIZE_                              
+savepdb model  tleap-_rec_name_l_-wat.pdb                          
+saveamberparm model _rec_name_l_.prmtop _rec_name_l_.prmcrd             
+
+
+rec-lig = loadpdb rec-lig.pdb                                 
+saveamberparm rec-lig rec-lig.prmtop rec-lig.prmcrd           
+
+rec = loadpdb rec.pdb                                         
+saveamberparm rec rec.prmtop rec.prmcrd                       
+
+lig_wat = loadpdb lig.pdb
+charge lig_wat
+addions lig_wat Cl- 0.0
+addions lig_wat Na+ 0.0
+_BOXTYPE_ lig_wat TIP3PBOX _BOXSIZE_ 
+savepdb lig_wat tleap-lig-wat.pdb
+saveamberparm lig_wat lig-wat.prmtop lig-wat.prmcrd
+
+lig = loadpdb lig.pdb
+saveamberparm lig lig.prmtop lig.prmcrd
+
+quit
+

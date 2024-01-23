@@ -1,0 +1,17 @@
+_EXEC_PROG_ -O -i ./ins/min1.in         -o min1.out       -p _rec_name_l_.prmtop  -c _rec_name_l_.prmcrd        -r min1.rst                            -ref _rec_name_l_.prmcrd    
+                                                                                                                                                               
+_EXEC_PROG_ -O -i ./ins/min2.in         -o min2.out       -p _rec_name_l_.prmtop  -c min1.rst           -r min2.rst                            -ref min1.rst       
+                                                                                                                                                               
+_EXEC_PROG_ -O -i ./ins/min3.in         -o min3.out       -p _rec_name_l_.prmtop  -c min2.rst           -r min3.rst                            -ref min2.rst       
+                                                                                                                                                               
+_EXEC_PROG_ -O -i ./ins/min4.in         -o min4.out       -p _rec_name_l_.prmtop  -c min3.rst           -r min4.rst                            -ref min3.rst         
+                
+_EXEC_PROG_ -O -i ./ins/heat.in         -o heat.out       -p _rec_name_l_.prmtop  -c min4.rst           -r heat.rst     -x _rec_name_l_-heat.mdcrd     -ref min4.rst      
+gzip -9 _rec_name_l_-heat.mdcrd &                                                                                                                                                             
+_EXEC_PROG_ -O -i ./ins/density.in      -o density.out    -p _rec_name_l_.prmtop  -c heat.rst           -r density.rst  -x _rec_name_l_-density.mdcrd  -ref heat.rst      
+gzip -9 _rec_name_l_-density.mdcrd &                                                                                                                                                              
+_EXEC_PROG_ -O -i ./ins/equil.in        -o equil.out      -p _rec_name_l_.prmtop  -c density.rst        -r equil.rst    -x _rec_name_l_-equil.mdcrd    -ref density.rst   
+gzip -9 _rec_name_l_-equil.mdcrd&
+
+
+
