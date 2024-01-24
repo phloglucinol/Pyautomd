@@ -1,3 +1,4 @@
+import os
 from optparse import OptionParser
 from src.parsing.input_file_parser import InputParser
 from src.workflow import auto_rec_lig_solvated_preparation
@@ -20,6 +21,8 @@ class Ligand_parameter_generation():
         self.ligand_charge = ligand_charge
         self.ligand_charge_model = ligand_charge_model
 
+automd_home = os.path.dirname(os.path.abspath(__file__))
+
 opts = optParser('')
 parser = InputParser(opts.option.input)
 ForceFeild_option = parser.get_ForceField()
@@ -30,8 +33,7 @@ water_ff = ForceFeild_option['water_ff']
 externel_amber_parms = ForceFeild_option['externel_amber_parms']
 externel_amber_prep = ForceFeild_option['externel_amber_prep']
 Externel_program_path = parser.get_Externel_program_path()
-automd_home = Externel_program_path['automd_home']
-amber = Externel_program_path['amber']
+amber = Externel_program_path['amber'] #not used
 gaussian = Externel_program_path['gaussian']
 gaussian_scr_path = Externel_program_path['gaussian_scr_path']
 amber_md = Externel_program_path['amber_md']
