@@ -1,9 +1,0 @@
-PDE9 (3JSW) : 3rd minimisation solvent + ions
- &cntrl
-  imin   = 1,
-  maxcyc = 5000,
-  ncyc   = 2500,
-  ntb    = 1,
-  ntr    = 0,
-  cut    = _CUTOFF_,
-/

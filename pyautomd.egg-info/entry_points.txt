@@ -1,0 +1,2 @@
+[console_scripts]
+pyautomd = pyautomd.pyautomd:main

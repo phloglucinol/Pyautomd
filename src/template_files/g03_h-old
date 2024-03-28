@@ -1,7 +1,0 @@
-%mem=1000mb
-%nproc=8
-# HF/6-31G(D)  SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6)
-
-test
-
-_CHARGE_ 1

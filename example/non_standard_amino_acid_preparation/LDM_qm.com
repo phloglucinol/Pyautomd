@@ -1,6 +1,6 @@
-%nproc=8
+%nproc=48
 %mem=2Gb
-%chk=/tmp/zli/scr/5305.chk
+%chk=/tmp/zli/scr/1519891.chk
 # PM3MM sp
 
 test
@@ -48,9 +48,9 @@ test
  H   -13.71400 -17.74200 -30.55200
 
 --link1--
-%nproc=8
+%nproc=48
 %mem=2Gb
-%chk=/tmp/zli/scr/5305.chk
+%chk=/tmp/zli/scr/1519891.chk
 # HF/gen SCF=tight Pop=(MK,ReadRadii) iop(6/33=2,6/41=10,6/42=17,6/50=1) Geom=AllCheck
 
 -C -H -O -N -P -S -F -Cl -Br 0

@@ -14,7 +14,7 @@ It's crucial to preprocess the receptor input PDB file meticulously, which can b
 ### 2.1 General Usage of PyAutoMD
 Detailed descriptions of the automd option are as follows:
 ```
-python $PYAUTOMD/src/main.py -i automd_input.txt
+pyautomd -i automd_input.txt
 ```
 
 ### 2.2 Automated Preparation of Topology and Coordinate Files of a Solvated Complex

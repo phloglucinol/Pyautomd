@@ -1,0 +1,7 @@
+%mem=1000mb
+%nproc=8
+# HF/gen  SCF=tight Test Pop=(MK,ReadRadii) iop(6/33=2) iop(6/42=6)
+
+test
+
+_CHARGE_ 1
