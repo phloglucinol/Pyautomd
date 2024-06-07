@@ -209,6 +209,7 @@ class PrepiGenerator:
                     pdb_atm = combined_line[12:16].strip()
                     ac_atm = combined_line[33:37].strip()
                     convert_name[ac_atm] = pdb_atm
+                    # print(convert_name)
         # Process the .prepi file
         output_lines = []
 
@@ -427,7 +428,7 @@ class PrepiGenerator:
         self.gen_atominfo_template(self.pdb)()
         self.keep_atominfo_prepi_to_pdb()
         self.run_parmchk2(f"{self.resn}.prepi", "prepi", f"{self.resn}.frcmod")
-        self.clean_up()
+        # self.clean_up()
 
 
 

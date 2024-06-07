@@ -36,7 +36,7 @@ def main(forcefield_needed, input_lig_pdb, lig_resname, charge_model='bcc', lig_
     elif charge_model == 'bcc':
         gaussian_lig_pdb = f"{lig_resname}_qm_gaussian.pdb"
         gaussian_out = f"{lig_resname}_qm.log"    
-    prepi_generator = antechamber_relate_module.PrepiGenerator(gaussian_lig_pdb, lig_resname, net_charge, charge_model, small_molecule_ff.split('.')[-1], gaussian_out)
+    prepi_generator = antechamber_relate_module.PrepiGenerator(gaussian_lig_pdb, lig_resname, lig_net_charge, charge_model, small_molecule_ff.split('.')[-1], gaussian_out)
     prepi_generator.gen_small_molecule_prepi() 
     if os.path.exists(f"{lig_resname}.prepi"):
         if os.path.exists(f"{lig_resname}.frcmod"):
