@@ -1,6 +1,6 @@
 # PyAutoMD: Python-Based Automatic Preparation for Amber Molecular Dynamics Input Files
 
-![PyAutoMD Logo]()
+![PyAutoMD Logo](./LOGO.png)
 
 ## 1. Important Notes
 ### 1.1 Preprocessing the Receptor Input PDB
