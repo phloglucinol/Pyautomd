@@ -1,5 +1,5 @@
 [ForceField]
-protein_ff = leaprc.protein.ff14SB
+protein_ff = leaprc.protein.ff15ipq
 small_molecule_ff = leaprc.gaff2
 lipid_ff = leaprc.lipid17
 water_ff = leaprc.water.tip3p

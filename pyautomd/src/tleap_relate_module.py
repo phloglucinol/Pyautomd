@@ -77,6 +77,7 @@ class Tleap_runner:
         with open("tleap.txt", "w") as file:
             for parm in self.forcefields:
                 file.write(f"source {parm}\n")
+            file.write(f"loadOff atomic_ions.lib #residue name for ions\n")
             file.write(f"loadamberparams {self.lig_name}.frcmod\n")
             file.write(f"loadamberprep {self.lig_name}.prepi\n")
             for parm in self.external_amberparms:

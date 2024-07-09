@@ -55,7 +55,7 @@ class PrepiGenerator:
         """
         # File patterns to be removed
         file_patterns = [
-            f"{self.prefix}.*", "ANTECHAMBER*", "NEWPDB.PDB",
+            f"{self.prefix}.*", "ANTECHAMBER*", 
             "PREP.INF", "punch", "qout", "QOUT", "esout", "ATOMTYPE.INF", 'sqm.*'
         ]
 
@@ -428,7 +428,7 @@ class PrepiGenerator:
         self.gen_atominfo_template(self.pdb)()
         self.keep_atominfo_prepi_to_pdb()
         self.run_parmchk2(f"{self.resn}.prepi", "prepi", f"{self.resn}.frcmod")
-        # self.clean_up()
+        self.clean_up()
 
 
 
